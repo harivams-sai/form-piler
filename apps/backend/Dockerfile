@@ -3,6 +3,7 @@ FROM node:lts AS builder
 # Set working directory
 
 WORKDIR /app
+RUN npm i -g pnpm
 RUN npm install turbo --global
 COPY . .
 RUN turbo prune --scope=backend --docker
@@ -11,13 +12,13 @@ RUN turbo prune --scope=backend --docker
 FROM node:lts AS installer
 # RUN apk update
 WORKDIR /app
-
+RUN npm i -g pnpm
 # First install dependencies (as they change less often)
 COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-RUN npm i -g pnpm
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --no-frozen-lockfile
+
 
 # Build the project and its dependencies
 COPY --from=builder /app/out/full/ .
@@ -26,7 +27,6 @@ RUN pnpm turbo run build --filter=backend...
 
 FROM node:lts AS runner
 WORKDIR /app
-
 # # Don't run production as root
 # RUN addgroup --system --gid 1001 expressjs
 # RUN adduser --system --uid 1001 expressjs
@@ -35,6 +35,7 @@ COPY --from=installer /app .
 
 WORKDIR /app/apps/backend
 # COPY prisma/schema.prisma ./prisma/
+RUN npm i -g pnpm
 RUN npx prisma generate
 
 EXPOSE 8080

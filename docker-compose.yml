@@ -29,7 +29,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres@postgres/webapp_dev
       PORT: 8000
-      REDIS_URL: redis://redis:6379
+      REDIS_URL: redis
       # networks:
     #   - form_piler_network
 # Define a network, which allows containers to communicate
