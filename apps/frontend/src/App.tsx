@@ -2,8 +2,9 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import './App.css';
 import Dashboard from './screens/Dashboard';
 
+const URL = `https://${process.env.REACT_APP_GRAPHQL_HOST}.onrender.com` || 'http://localhost:8000/';
 const client = new ApolloClient({
-  uri: 'http://localhost:8000/',
+  uri: URL,
   cache: new InMemoryCache(),
 });
 

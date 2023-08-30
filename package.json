@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "docker:comp": "docker-compose -f docker-compose.yml build",
-    "build": "turbo run build --filter=frontend",
-    "dev": "turbo run dev --filter=frontend --parallel",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
@@ -14,6 +14,9 @@
     "prettier": "^3.0.3",
     "tsconfig": "workspace:*",
     "turbo": "latest"
+  },
+  "engines": {
+    "node": "18.17.1"
   },
   "packageManager": "pnpm@8.6.10"
 }

@@ -23,13 +23,13 @@ services:
       - 8000:8000
       - 9229:9229  # debugger port
     volumes:
-      - ./apps/backend:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./apps/backend:/app/apps/backend
+      - /app/apps/backend/node_modules
     command: pnpm start:docker
     environment:
       DATABASE_URL: postgres://postgres@postgres/webapp_dev
       PORT: 8000
-      REDIS_URL: redis
+      REDIS_URL: redis://redis:6379
       # networks:
     #   - form_piler_network
 # Define a network, which allows containers to communicate
