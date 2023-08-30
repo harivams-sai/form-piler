@@ -1,3 +1,24 @@
+# A Form Response Generator!
+The Tech Stack 🌟
+
+| Technology                                  | Description                               |
+|---------------------------------------------|-------------------------------------------|
+| [TypeScript](https://www.typescriptlang.org/download) | You know it!                            |
+| [Docker](https://www.docker.com/)                 | Containerize it all!                   |
+| [React](https://react.dev/)                       | The JS Frontend Library                 |
+| [Node](https://nodejs.org/en)                     | Server-side JS runtime env              |
+| [Express](https://expressjs.com/)                 | Server Side Framework for Node.js       |
+| [Postgresql](https://www.postgresql.org/)         | The Big Elephant DB                    |
+| [GraphQL](https://graphql.org/)                   | For querying into GraphQL APIs          |
+| [Redis and BullMQ](https://github.com/taskforcesh/bullmq) | Message Broker for managing Task Queue |
+| [Prisma](https://www.prisma.io/)                  | Node.js ORM for Postgres DB            |
+| [Knex](https://knexjs.org/)                       | For SQL query building and DB Migrations|
+| [Morgan](https://github.com/expressjs/morgan)     | Logger for HTTP requests               |
+| [SWC](https://swc.rs/)                           | Fast Compiler                          |
+
+
+![image](https://github.com/harivams-sai/form-piler/assets/88828522/9d50c6d5-d932-461e-bb39-cd540c740638)
+
 # Turborepo starter
 
 This is an official starter Turborepo.
